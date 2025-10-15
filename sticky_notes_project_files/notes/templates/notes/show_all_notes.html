@@ -1,0 +1,25 @@
+<!--sticky_notes_project_files/notes/templates/notes/show_all_notes.html
+This corresponds to the view with the same name. Extends the base.html
+file. 2025-09-11 EJS -->
+
+{% extends 'base.html' %}
+{% block title %}
+  Sticky Note Board - {{ page_title }}
+{% endblock %}
+{% block content %}
+  <h2>
+    {{ page_title }}
+  </h2>
+  <ul>
+    <a style="font-size: 30px;" href="{% url 'create_note' %}" >Add note</a>
+    <p></p>
+    {% for note in all_notes %}
+      <li>
+        <a href="{% url 'show_one_note' pk=note.pk %}">{{ note.title }}</a>
+        <p>
+          {{ note.content }}
+        </p>
+      </li>
+    {% endfor %}
+  </ul>
+{% endblock %}

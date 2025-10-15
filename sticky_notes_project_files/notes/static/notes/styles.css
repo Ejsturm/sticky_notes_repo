@@ -1,0 +1,35 @@
+/* sticky_notes_project_files/notes/static/notes/styles.css
+This is the style page that will be applied to the base.html template
+and therefore extend to all other html templates. 2025-09-11 EJS */
+
+body {
+  font-family: "Arial", sans-serif;
+}
+
+header {
+  background-color: cadetblue;
+  color: blanchedalmond;
+  padding: 10px;
+  text-align: center;
+}
+
+main {
+  margin: 20px;
+  background-color: blanchedalmond;
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+li {
+  margin-bottom: 20px;
+}
+
+footer {
+    background-color: cadetblue;
+    color: blanchedalmond;
+    padding: 10px;
+    text-align: center;
+}

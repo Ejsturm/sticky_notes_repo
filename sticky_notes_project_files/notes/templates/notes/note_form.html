@@ -1,0 +1,36 @@
+<!-- sticky_notes_project_files/notes/templates/notes/note_form.html
+ This corresponds to the views of create_note() and update_note().
+ 2025-09-11 EJS -->
+
+ {% extends 'base.html' %}
+ {% block title %}
+   Sticky Note Board -
+    {% if form.instance.pk %}
+      Edit
+    {% else %}
+      Create
+    {% endif %}
+    Note
+{% endblock %}
+{% block content %}
+  <h2>
+    {% if form.instance.pk %}
+      Edit
+    {% else %}
+      Create
+    {% endif %}
+    Note
+  </h2>
+  <form method="post"
+        action="{% if form.instance.pk %}
+                  {% url 'update_note' pk=form.instance.pk %}
+                {% else %}
+                  {% url 'create_note' %}
+                {% endif %}">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit"> Save </button>
+  </form>
+  <br>
+  <a href="{% url 'show_all_notes' %}">Back to Sticky Note Board</a>
+{% endblock %}
